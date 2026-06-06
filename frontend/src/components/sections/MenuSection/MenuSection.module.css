@@ -1,0 +1,125 @@
+.menuSection {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.subTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.categoryGroup {
+  margin-bottom: var(--space-16);
+}
+
+.categoryGroup:last-child {
+  margin-bottom: 0;
+}
+
+.categoryTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: var(--space-2);
+  width: fit-content;
+}
+
+/* Grids */
+.signatureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.regularGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .regularGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .signatureGrid, .regularGrid {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* SideDish Gallery Styling */
+.sideDishGalleryContainer {
+  position: relative;
+  width: 100%;
+}
+
+.galleryScrollArea {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.galleryScrollArea::-webkit-scrollbar {
+  height: 6px;
+}
+
+.galleryScrollArea::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.galleryItem {
+  flex: 0 0 180px; /* 고정 크기로 스크롤 구현 */
+}
+
+/* Desktop Grid for SideDishes */
+@media (min-width: 1025px) {
+  .galleryScrollArea {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .galleryItem {
+    flex: none;
+    width: auto;
+  }
+}
+
+.refillBadge {
+  margin-top: var(--space-4);
+  text-align: right;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+}

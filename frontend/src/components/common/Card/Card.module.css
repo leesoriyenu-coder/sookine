@@ -1,0 +1,220 @@
+.card {
+  background-color: var(--color-bg-secondary);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.cardHover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 1. Menu Card (Default) */
+.menuCard {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.imageArea {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: var(--color-bg-tertiary);
+  overflow: hidden;
+  border-bottom: var(--border-light);
+}
+
+.menuImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.menuCard:hover .menuImage {
+  transform: scale(1.05);
+}
+
+.fallbackImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  background-color: var(--color-bg-tertiary);
+  user-select: none;
+}
+
+.fallbackLogo {
+  font-size: var(--text-3xl);
+  color: var(--color-accent);
+  margin-bottom: var(--space-1);
+}
+
+.contentArea {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-2);
+  gap: var(--space-2);
+}
+
+.menuName {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.menuPrice {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-cta);
+  white-space: nowrap;
+}
+
+.menuDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.menuFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  border-top: var(--border-light);
+  padding-top: var(--space-3);
+}
+
+.menuNote {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+/* 2. Signature Menu Card */
+.signatureCard {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  height: 100%;
+}
+
+.sigImageArea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  background-color: var(--color-bg-tertiary);
+  overflow: hidden;
+}
+
+.sigContentArea {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sigBadgeRow {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sigName {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.sigPrice {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-cta);
+  margin-bottom: var(--space-3);
+}
+
+.sigDesc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .signatureCard {
+    grid-template-columns: 1fr;
+  }
+  .sigImageArea {
+    aspect-ratio: 4/3;
+  }
+  .sigContentArea {
+    padding: var(--space-5);
+  }
+}
+
+/* 3. SideDish Card */
+.sideDishCard {
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sideDishImageArea {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background-color: var(--color-bg-tertiary);
+}
+
+.sideDishImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.sideDishCard:hover .sideDishImage {
+  transform: scale(1.08);
+}
+
+.sideDishName {
+  padding: var(--space-3) var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  width: 100%;
+  background-color: var(--color-bg-secondary);
+  transition: var(--transition-fast);
+}
+
+.sideDishCard:hover .sideDishName {
+  color: var(--color-cta);
+}

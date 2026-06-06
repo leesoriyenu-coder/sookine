@@ -1,0 +1,81 @@
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Statuses */
+.open {
+  background-color: var(--color-status-open-bg);
+  color: var(--color-status-open);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+.open .dot {
+  background-color: var(--color-status-open);
+}
+
+.break {
+  background-color: var(--color-status-break-bg);
+  color: var(--color-status-break);
+  border: 1px solid rgba(202, 138, 4, 0.2);
+}
+.break .dot {
+  background-color: var(--color-status-break);
+}
+
+.closed {
+  background-color: var(--color-status-closed-bg);
+  color: var(--color-status-closed);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+.closed .dot {
+  background-color: var(--color-status-closed);
+}
+
+.holiday {
+  background-color: var(--color-status-holiday-bg);
+  color: var(--color-status-holiday);
+  border: 1px solid rgba(82, 82, 82, 0.2);
+}
+.holiday .dot {
+  background-color: var(--color-status-holiday);
+}
+
+/* Sizes */
+.sm {
+  padding: 4px 10px;
+  font-size: var(--text-xs);
+}
+.sm .dot {
+  width: 6px;
+  height: 6px;
+}
+
+.md {
+  padding: 6px 14px;
+  font-size: var(--text-sm);
+}
+
+.lg {
+  padding: 8px 18px;
+  font-size: var(--text-base);
+}
+.lg .dot {
+  width: 10px;
+  height: 10px;
+}

@@ -1,0 +1,127 @@
+.sidebar {
+  width: 260px;
+  background-color: var(--color-admin-sidebar);
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.logoArea {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-bg-primary);
+  text-align: center;
+  display: block;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex-grow: 1;
+}
+
+.linkItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  transition: var(--transition-fast);
+}
+
+.linkItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.activeLink {
+  background-color: var(--color-accent);
+  color: #ffffff !important;
+}
+
+.footerArea {
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoutBtn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: var(--transition-fast);
+  text-align: left;
+}
+
+.logoutBtn:hover {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--color-admin-error);
+}
+
+/* 모바일 뷰 대응 (하단 탭 바 형태) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    z-index: var(--z-sticky);
+    flex-direction: row;
+    padding: var(--space-2) var(--space-4);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .logoArea {
+    display: none;
+  }
+
+  .menuList {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+  }
+
+  .linkItem {
+    flex-direction: column;
+    padding: var(--space-2);
+    font-size: 10px;
+    gap: 4px;
+    border-radius: var(--radius-sm);
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footerArea {
+    display: none; /* 모바일에서는 로그아웃 버튼을 대시보드 헤더에 노출 */
+  }
+}

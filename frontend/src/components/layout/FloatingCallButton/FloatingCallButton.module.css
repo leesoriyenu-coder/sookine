@@ -1,0 +1,33 @@
+.floatingButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-cta);
+  color: #ffffff;
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-floating);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  text-decoration: none;
+}
+
+.floatingButton:hover {
+  background-color: var(--color-cta-hover);
+  transform: scale(1.05);
+}
+
+.floatingButton:active {
+  transform: scale(0.95);
+}
+
+/* 1024px 이상 해상도(데스크탑)에서는 숨김 */
+@media (min-width: 1025px) {
+  .floatingButton {
+    display: none;
+  }
+}

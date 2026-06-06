@@ -1,0 +1,319 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* 2.1.1 기본 컬러 */
+  --color-bg-primary: #FAF7F2;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F0EBE3;
+  --color-text-primary: #1C1C1E;
+  --color-text-secondary: #78716C;
+  --color-text-tertiary: #A8A29E;
+  --color-accent: #D4A853;
+  --color-accent-hover: #C49A47;
+  --color-cta: #C4553A;
+  --color-cta-hover: #B34A32;
+  --color-cta-active: #A3402B;
+  --color-seasonal: #6B8E5A;
+  --color-seasonal-hover: #5E7E4F;
+  --color-border: #E7E0D8;
+  --color-border-light: #F0EBE3;
+
+  /* 2.1.2 상태 컬러 */
+  --color-status-open: #16A34A;
+  --color-status-open-bg: #F0FDF4;
+  --color-status-break: #CA8A04;
+  --color-status-break-bg: #FEFCE8;
+  --color-status-closed: #DC2626;
+  --color-status-closed-bg: #FEF2F2;
+  --color-status-holiday: #525252;
+  --color-status-holiday-bg: #F5F5F5;
+
+  /* 2.1.3 관리자 전용 컬러 */
+  --color-admin-bg: #FAFAFA;
+  --color-admin-sidebar: #1C1C1E;
+  --color-admin-success: #16A34A;
+  --color-admin-error: #DC2626;
+  --color-admin-warning: #F59E0B;
+
+  /* 2.2.1 폰트 패밀리 */
+  --font-display: "Nanum Pen Script", cursive;
+  --font-heading: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-body: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-quote: "Nanum Myeongjo", "KoPub Batang", serif;
+  --font-mono: "Inter", "Roboto Mono", monospace;
+
+  /* 2.2.2 폰트 크기 스케일 */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+
+  /* 2.2.3 폰트 굵기 */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* 2.2.4 줄 높이 */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  --leading-loose: 2;
+
+  /* 2.2.5 자간 */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+
+  /* 2.3 공간 */
+  --space-0: 0px;
+  --space-1: 0.25rem;     /* 4px */
+  --space-2: 0.5rem;      /* 8px */
+  --space-3: 0.75rem;     /* 12px */
+  --space-4: 1rem;        /* 16px */
+  --space-5: 1.25rem;     /* 20px */
+  --space-6: 1.5rem;      /* 24px */
+  --space-8: 2rem;        /* 32px */
+  --space-10: 2.5rem;     /* 40px */
+  --space-12: 3rem;       /* 48px */
+  --space-16: 4rem;       /* 64px */
+  --space-20: 5rem;       /* 80px */
+  --space-24: 6rem;       /* 96px */
+
+  /* 2.4 섹션 간격 */
+  --section-padding-y: 5rem;
+  --section-padding-x: 1.5rem;
+  --section-gap: 0px;
+
+  /* 2.5.1 컨테이너 */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  --container-padding: 1.5rem;
+
+  /* 2.5.2 반응형 Breakpoint */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* 2.6.1 Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* 2.6.2 Box Shadow */
+  --shadow-sm: 0 1px 2px rgba(28, 28, 30, 0.04);
+  --shadow-md: 0 2px 8px rgba(28, 28, 30, 0.06);
+  --shadow-lg: 0 4px 16px rgba(28, 28, 30, 0.08);
+  --shadow-xl: 0 8px 32px rgba(28, 28, 30, 0.12);
+
+  /* 2.6.3 Border */
+  --border-default: 1px solid var(--color-border);
+  --border-light: 1px solid var(--color-border-light);
+  --border-accent: 4px solid var(--color-accent);
+
+  /* 2.7.1 Transition */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* 2.8 Z-Index 스케일 */
+  --z-base: 0;
+  --z-above: 10;
+  --z-sticky: 100;
+  --z-banner: 200;
+  --z-floating: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 3.5rem;
+    --section-padding-x: 1rem;
+    --container-padding: 1rem;
+  }
+}
+
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  font-weight: var(--font-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Common Text Styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in-up {
+  animation: fadeInUp var(--transition-slow) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown var(--transition-normal) forwards;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Accessibility settings for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

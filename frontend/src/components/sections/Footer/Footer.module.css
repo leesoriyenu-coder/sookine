@@ -1,0 +1,96 @@
+.footer {
+  background-color: var(--color-admin-sidebar);
+  color: var(--color-text-tertiary);
+  padding: var(--space-12) 0;
+  font-size: var(--text-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.restaurantName {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-bg-primary);
+  margin-bottom: var(--space-1);
+}
+
+.infoLine {
+  line-height: var(--leading-normal);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-4);
+  text-align: right;
+}
+
+.adminLink {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: var(--text-xs);
+  transition: var(--transition-fast);
+}
+
+.adminLink:hover {
+  color: var(--color-accent);
+}
+
+.copyright {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.2);
+  margin-top: var(--space-2);
+}
+
+.externalLinks {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-1);
+}
+
+.linkItem {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: var(--text-xs);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.linkItem:hover {
+  color: var(--color-accent);
+}
+
+.adminRow {
+  margin-top: var(--space-1);
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-6);
+  }
+  .right {
+    align-items: center;
+    text-align: center;
+  }
+  .externalLinks {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+}

@@ -1,0 +1,195 @@
+.storySection {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.subTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto var(--space-16) auto;
+  padding-left: var(--space-8);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: var(--space-10);
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.timelineNode {
+  position: absolute;
+  left: -29px; /* 선 위 중앙 정렬 */
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  border: 3px solid var(--color-bg-primary);
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+
+.timelineContent {
+  background-color: var(--color-bg-secondary);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5);
+  margin-left: var(--space-4);
+  transition: var(--transition-normal);
+}
+
+.timelineContent:hover {
+  transform: translateX(2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.timelineYear {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-cta);
+  margin-bottom: var(--space-1);
+}
+
+.timelineTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.timelineDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.timelineInner {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timelineText {
+  flex-grow: 1;
+}
+
+.timelineThumbnail {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.timelineEmoji {
+  font-size: var(--text-3xl);
+  line-height: 1;
+}
+
+.timelineImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* Owner Quote block */
+.quoteContainer {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.blockquote {
+  border-left: var(--border-accent);
+  padding: var(--space-4) 0 var(--space-4) var(--space-6);
+  font-family: var(--font-quote);
+  font-size: var(--text-lg);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.quoteAuthor {
+  display: block;
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  font-style: normal;
+  color: var(--color-text-secondary);
+  text-align: right;
+  padding-right: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--text-2xl);
+  }
+  .blockquote {
+    font-size: var(--text-base);
+    padding: var(--space-3) 0 var(--space-3) var(--space-4);
+  }
+  .timelineInner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .timelineThumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  .timelineEmoji {
+    font-size: var(--text-2xl);
+  }
+}

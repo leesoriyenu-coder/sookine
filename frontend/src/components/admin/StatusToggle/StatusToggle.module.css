@@ -1,0 +1,108 @@
+.container {
+  background-color: var(--color-bg-secondary);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.statusBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  gap: var(--space-2);
+}
+
+.statusBtn:hover {
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-accent);
+}
+
+.statusLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-text-tertiary);
+}
+
+/* Active buttons styling */
+.activeBtn_open {
+  background-color: var(--color-status-open-bg);
+  border-color: var(--color-status-open);
+}
+.activeBtn_open .statusLabel {
+  color: var(--color-status-open);
+}
+.activeBtn_open .dot {
+  background-color: var(--color-status-open);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.activeBtn_break {
+  background-color: var(--color-status-break-bg);
+  border-color: var(--color-status-break);
+}
+.activeBtn_break .statusLabel {
+  color: var(--color-status-break);
+}
+.activeBtn_break .dot {
+  background-color: var(--color-status-break);
+}
+
+.activeBtn_closed {
+  background-color: var(--color-status-closed-bg);
+  border-color: var(--color-status-closed);
+}
+.activeBtn_closed .statusLabel {
+  color: var(--color-status-closed);
+}
+.activeBtn_closed .dot {
+  background-color: var(--color-status-closed);
+}
+
+.activeBtn_holiday {
+  background-color: var(--color-status-holiday-bg);
+  border-color: var(--color-status-holiday);
+}
+.activeBtn_holiday .statusLabel {
+  color: var(--color-status-holiday);
+}
+.activeBtn_holiday .dot {
+  background-color: var(--color-status-holiday);
+}
+
+@media (max-width: 640px) {
+  .buttonGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
