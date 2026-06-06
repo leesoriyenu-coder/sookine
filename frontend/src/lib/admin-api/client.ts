@@ -1,10 +1,9 @@
-import { ApiResponse, MetaInfo } from "@/types/api";
+import { ApiResponse } from "@/types/api";
 
-const BASE_URL = typeof process !== "undefined" ? process.env.NEXT_PUBLIC_SUPABASE_URL + "/functions/v1" : "";
+const BASE_URL = "/api/admin";
 
 export const adminClient = {
   // 실제 API 헤더 및 토큰 헬퍼
-  /*
   getHeaders(): HeadersInit {
     const token = typeof window !== "undefined" ? localStorage.getItem("sookine_session_token") : "";
     return {
@@ -12,7 +11,6 @@ export const adminClient = {
       "Authorization": `Bearer ${token}`
     };
   },
-  */
 
   // 성공 응답 포맷터
   success<T>(data: T): ApiResponse<T> {
@@ -32,16 +30,14 @@ export const adminClient = {
     };
   },
 
-  // GET 요청 모사/실제
+  // GET 요청
   async get<T>(path: string): Promise<ApiResponse<T>> {
-    /*
     try {
       const response = await fetch(`${BASE_URL}${path}`, {
         method: "GET",
         headers: this.getHeaders()
       });
       if (response.status === 401) {
-        // 401 Unauthorized 시 자동 로그아웃 및 리다이렉트 처리 로직
         if (typeof window !== "undefined") {
           localStorage.removeItem("sookine_session_token");
           window.location.href = "/admin/login";
@@ -51,7 +47,88 @@ export const adminClient = {
     } catch (err: any) {
       return this.error("INTERNAL_ERROR", err.message || "서버 통신 실패");
     }
-    */
-    return this.error("NOT_IMPLEMENTED", "클라이언트 모조 메소드 호출");
+  },
+
+  // POST 요청
+  async post<T>(path: string, body: any): Promise<ApiResponse<T>> {
+    try {
+      const response = await fetch(`${BASE_URL}${path}`, {
+        method: "POST",
+        headers: this.getHeaders(),
+        body: JSON.stringify(body)
+      });
+      if (response.status === 401) {
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("sookine_session_token");
+          window.location.href = "/admin/login";
+        }
+      }
+      return await response.json();
+    } catch (err: any) {
+      return this.error("INTERNAL_ERROR", err.message || "서버 통신 실패");
+    }
+  },
+
+  // PATCH 요청
+  async patch<T>(path: string, body: any): Promise<ApiResponse<T>> {
+    try {
+      const response = await fetch(`${BASE_URL}${path}`, {
+        method: "PATCH",
+        headers: this.getHeaders(),
+        body: JSON.stringify(body)
+      });
+      if (response.status === 401) {
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("sookine_session_token");
+          window.location.href = "/admin/login";
+        }
+      }
+      return await response.json();
+    } catch (err: any) {
+      return this.error("INTERNAL_ERROR", err.message || "서버 통신 실패");
+    }
+  },
+
+  // DELETE 요청
+  async del<T>(path: string): Promise<ApiResponse<T>> {
+    try {
+      const response = await fetch(`${BASE_URL}${path}`, {
+        method: "DELETE",
+        headers: this.getHeaders()
+      });
+      if (response.status === 401) {
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("sookine_session_token");
+          window.location.href = "/admin/login";
+        }
+      }
+      return await response.json();
+    } catch (err: any) {
+      return this.error("INTERNAL_ERROR", err.message || "서버 통신 실패");
+    }
+  },
+
+  // 파일 업로드 요청
+  async upload<T>(path: string, formData: FormData): Promise<ApiResponse<T>> {
+    try {
+      const token = typeof window !== "undefined" ? localStorage.getItem("sookine_session_token") : "";
+      const response = await fetch(`${BASE_URL}${path}`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
+        body: formData
+      });
+      if (response.status === 401) {
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("sookine_session_token");
+          window.location.href = "/admin/login";
+        }
+      }
+      return await response.json();
+    } catch (err: any) {
+      return this.error("INTERNAL_ERROR", err.message || "서버 통신 실패");
+    }
   }
 };
+export const dynamic = "force-dynamic";
