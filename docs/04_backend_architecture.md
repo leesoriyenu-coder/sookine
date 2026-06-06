@@ -16,7 +16,7 @@
 │                         Vercel (Next.js)                        │
 │                                                                 │
 │  ┌──────────────┐  ┌──────────────┐  ┌───────────────────────┐ │
-│  │ SSG/ISR Pages│  │ API Routes   │  │ Middleware            │ │
+│  │ SSG/ISR Pages│  │ API Routes   │  │ Proxy (Next.js 16)    │ │
 │  │ (공개 페이지) │  │ /api/revalidate│ │ (관리자 경로 보호)    │ │
 │  └──────┬───────┘  └──────┬───────┘  └───────────────────────┘ │
 │         │                  │                                    │

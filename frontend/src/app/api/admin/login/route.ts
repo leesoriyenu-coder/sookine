@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
       expires_at: expiresAt
     });
 
-    // Middleware에서 검증하기 위한 쿠키 설정
+    // Proxy에서 검증하기 위한 쿠키 설정
     response.cookies.set("sookine_session_token", sessionToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",

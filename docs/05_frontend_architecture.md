@@ -217,7 +217,7 @@ sookine/
 │   │       ├── useLightbox.ts           # 라이트박스 상태 훅
 │   │       └── useMediaQuery.ts         # 반응형 미디어 쿼리 훅
 │   │
-│   ├── middleware.ts                    # Next.js Middleware (관리자 경로 보호)
+│   ├── proxy.ts                         # Next.js Proxy (관리자 경로 보호, Next.js 16)
 │   │
 │   └── types/
 │       ├── database.ts                  # Supabase 자동 생성 DB 타입
@@ -614,14 +614,14 @@ Component.module.css           # CSS Modules (컴포넌트 스코프)
 
 ### 7.2 관리자 라우트 보호
 
-**구현 방식**: Next.js Middleware (`middleware.ts`)
+**구현 방식**: Next.js Proxy (`proxy.ts`)
 
 **동작**:
 1. `/admin/*` 경로 (단, `/admin/login` 제외) 접근 시 실행
 2. 쿠키 또는 세션 검증 (클라이언트에서 `useAuth` 훅으로도 이중 검증)
 3. 미인증 시 `/admin/login`으로 리다이렉트
 
-**Middleware 파일 위치**: `src/middleware.ts`
+**Proxy 파일 위치**: `src/proxy.ts`
 
 **매칭 설정**: `config.matcher = ['/admin/((?!login).*)']`
 
