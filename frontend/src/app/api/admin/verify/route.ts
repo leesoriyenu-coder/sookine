@@ -35,3 +35,4 @@ export async function GET(req: NextRequest) {
     return errorResponse("INTERNAL_ERROR", err.message || "세션 확인 중 오류 발생", 500);
   }
 }
+export const dynamic = "force-dynamic";

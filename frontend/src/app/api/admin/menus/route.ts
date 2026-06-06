@@ -64,3 +64,4 @@ export async function POST(req: NextRequest) {
     return errorResponse("INTERNAL_ERROR", err.message || "메뉴 등록 중 오류 발생", 500);
   }
 }
+export const dynamic = "force-dynamic";

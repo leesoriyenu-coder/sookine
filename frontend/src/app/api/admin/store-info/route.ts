@@ -66,3 +66,4 @@ export async function PATCH(req: NextRequest) {
     return errorResponse("INTERNAL_ERROR", err.message || "매장 정보 수정 중 오류 발생", 500);
   }
 }
+export const dynamic = "force-dynamic";
